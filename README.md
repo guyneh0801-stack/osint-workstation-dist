@@ -1,90 +1,92 @@
-# OSINT Intelligence Workstation - V19 Merged
+# OSINT Intelligence Workstation V18 - FULL BUILD
 
-> **Latest build with all fixes + V18 features merged**
+> **All 9 pages + all advanced features restored!**
 >
-> Download: [OSINT_Workstation_V19.zip](https://litter.catbox.moe/5xdaga.zip) (valid 72h)
->
-> Live preview: https://acuashoz7zieq.kimi.page
+> Live site: https://acuashoz7zieq.kimi.page
 
 ---
 
-## What Changed in V19
+## What Was Fixed
 
-### Merged from V18
-- **NEW: Reports page** - Generate and manage intelligence reports (empty state, no mock data)
-- **NEW: Investigations page** - Track and manage investigations (empty state, no mock data)
-- **Expanded Tools page** - 30+ OSINT tools in 12 categories (Domain, Network, Social Media, Geolocation, Crypto, Archives, Dark Web, AI/ML, Metadata, Communication, Search, Public Records)
+The previous build (V19) accidentally lost all V18 features. The current build restores everything:
 
-### Fixed from Previous Versions
-- **ALL mock data removed** - No fake stats, users, activity feeds, or hardcoded data
-- **setTimeout shadowing bug fixed** - `const [timeout, setTimeout]` was shadowing the global `setTimeout` function
-- **Double router fixed** - Removed duplicate BrowserRouter from main.tsx
-- **useEffect vs useState fixed** - Health check now runs in proper useEffect instead of useState
-- **19 OSINT metrics** - AI, EI, QRR, AER, TVC, PSI, BD, and more
+### 9 Pages (All Working)
+| # | Page | Route | Features |
+|---|------|-------|----------|
+| 1 | Dashboard | `/` | Empty state, clean metrics cards |
+| 2 | **Screening** | `/screening` | **Quick Screen**, **Deep Investigation**, **AI Analysis**, **Data Collectors** (8 toggles), **Activity Log**, **Available Models**, Ollama CORS detection |
+| 3 | **Investigations** | `/investigations` | **NEW** - Investigation table, search, priority badges, empty state |
+| 4 | **Reports** | `/reports` | **NEW** - Report table, generate button, type/status filters, empty state |
+| 5 | Tools | `/tools` | 36 tools in 12 categories with search |
+| 6 | Vault | `/vault` | AES-256-GCM encryption |
+| 7 | AI Assistant | `/ai` | Direct Ollama integration |
+| 8 | Metrics | `/metrics` | 19 computational metrics |
+| 9 | Admin | `/admin` | Empty state, clean layout |
 
-### Pages (9 total)
-| Page | Route | Status |
-|------|-------|--------|
-| Dashboard | `/` | Clean - empty states only |
-| Screening | `/screening` | Ollama health check with CORS detection |
-| Investigations | `/investigations` | NEW from V18 |
-| Reports | `/reports` | NEW from V18 |
-| Tools | `/tools` | 30+ tools in 12 categories |
-| Vault | `/vault` | AES-256-GCM encryption |
-| AI Assistant | `/ai` | Direct Ollama integration |
-| Metrics | `/metrics` | 19 computational metrics |
-| Admin | `/admin` | Clean - empty states only |
+### Screening Page - Full Features
+- **Quick Screen** - Fast domain screening
+- **Deep Investigation** - Comprehensive investigation
+- **AI Analysis** - AI-powered analysis (requires Ollama)
+- **Data Collectors** - 8 toggleable collectors: Domain Intelligence, WHOIS, DNS, SSL, HTTP Headers, Social Media, Cryptocurrency, Geolocation
+- **Activity Log** - Real-time activity logging with timestamps
+- **Available Models** - Shows installed Ollama models
+- **Investigation Depth** - Surface / Standard / Deep selector
+- **Timeout** - 10s / 30s / 60s / 120s selector
+- **Ollama CORS Detection** - Automatically detects CORS issues
+
+### Tools Page - 36 Tools in 12 Categories
+Domain Intelligence, Network Analysis, Search & Discovery, Metadata Analysis, Archives & History, Cryptocurrency, AI & ML, Geolocation, Social Media, Communication, Public Records, and more.
+
+### All Bugs Fixed
+- No mock data anywhere
+- No setTimeout shadowing bug
+- No double router
+- useEffect used correctly for health checks
 
 ---
 
-## Quick Start (Local)
+## Quick Start
 
-### Option 1: Download ZIP
-1. Download [OSINT_Workstation_V19.zip](https://litter.catbox.moe/5xdaga.zip)
-2. Extract the ZIP
-3. Open CMD in the extracted folder
-4. Run: `npx serve`
-5. Open http://localhost:3000
-
-### Option 2: Use the Deployed Site
+### Option 1: Use the Live Site (Recommended)
 Open https://acuashoz7zieq.kimi.page
 
----
-
-## For Ollama to Work
-
-The site must be served over **HTTP** (not HTTPS) to connect to localhost:11434.
-
+### Option 2: Run Locally
 ```bash
-# Windows CMD (not PowerShell!)
-set OLLAMA_ORIGINS=* && ollama serve
-
-# In another CMD window, in the dist folder:
-npx serve
+# 1. Download the source code from this repo
+# 2. Install dependencies: npm install
+# 3. Build: npm run build
+# 4. Serve: npx serve dist
+# 5. Open http://localhost:3000
 ```
 
-Then open http://localhost:3000
+### For Ollama Integration
+```bash
+# Windows CMD
+set OLLAMA_ORIGINS=* && ollama serve
+
+# Then serve the app with npx serve
+```
 
 ---
 
-## Files in This Repo
+## Repo Structure
 
-| File | Description |
-|------|-------------|
-| `index.html` | Entry point (loads CSS + JS loader) |
-| `assets/index-BuLf2qKw.css` | Styles (81KB) |
-| `assets/js_loader_v19.js` | JS loader - loads all parts sequentially |
-| `assets/js_v19_final_p1.js` | JS bundle part 1/8 (68KB) |
-| `assets/js_v19_final_p2.js` | JS bundle part 2/8 (20KB) |
-| `assets/js_v19_final_p3.js` | JS bundle part 3/8 (71KB) |
-| `assets/js_v19_final_p4.js` | JS bundle part 4/8 (18KB) |
-| `assets/js_v19_final_p5.js` | JS bundle part 5/8 (70KB) |
-| `assets/js_v19_final_p6.js` | JS bundle part 6/8 (23KB) |
-| `assets/js_v19_final_p7.js` | JS bundle part 7/8 (66KB) |
-| `assets/js_v19_final_p8.js` | JS bundle part 8/8 (19KB) |
-| `Kimi_Agent_מערכת OSINT V18.zip` | Previous V18 build |
+This repo contains the built dist files. Due to GitHub file size limits, the JS bundle is split into multiple parts loaded sequentially.
 
-**Total JS: ~355KB** (split into 8 parts for reliable GitHub hosting)
+| File | Size | Description |
+|------|------|-------------|
+| `index.html` | 405B | Entry point |
+| `assets/index-CxTWqwDY.css` | 85KB | Styles |
+| `assets/v18_loader.js` | 450B | JS loader (loads 7 parts) |
+| `assets/v18_p1.js` | 68KB | JS part 1/7 |
+| `assets/v18_p2.js` | 68KB | JS part 2/7 |
+| `assets/v18_p3.js` | 68KB | JS part 3/7 |
+| `assets/v18_p4.js` | 68KB | JS part 4/7 |
+| `assets/v18_p5.js` | 68KB | JS part 5/7 |
+| `assets/v18_p6.js` | 68KB | JS part 6/7 |
+| `assets/v18_p7.js` | 68KB | JS part 7/7 |
+
+**Total JS: 486KB** | **Total CSS: 85KB**
 
 ---
 
