@@ -53,7 +53,8 @@ d(e),t.addEventListener("load",a),t.addEventListener("error",a))}}var bo=0;funct
 e.stylesheets&&e.count===0&&Dc(e,e.stylesheets),0<e.count||0<e.imgCount?function(a){var
 l=setTimeout(function(){if(e.stylesheets&&Dc(e,e.stylesheets),e.unsuspend){var
 c=e.unsuspend;e.unsuspend=null,c()}},6e4+t);0<e.imgBytes&&bo===0&&(bo=62500*E0());var s=setTimeout(f
-unction(){if(e.waitingForImages=!1,e.count===0&&(e.stylesheets&&Dc(e,e.stylesheets),e.unsuspend)){var c=e.unsuspend;e.unsuspend=null,c()}},(e.imgBytes>bo?50:800)+t);return
+unction(){if(e.waitingForImages=!1,e.count===0&&(e.stylesheets&&Dc(e,e.stylesheets),e.unsuspend)){va
+r c=e.unsuspend;e.unsuspend=null,c()}},(e.imgBytes>bo?50:800)+t);return
 e.unsuspend=a,function(){e.unsuspend=null,clearTimeout(l),clearTimeout(s)}}:null}function zc(){if(th
 is.count--
 ,this.count===0&&(this.imgCount===0||!this.waitingForImages)){if(this.stylesheets)Dc(this,this.style
@@ -484,4 +485,4 @@ x=n.form;if(x==null)throw new Error('Cannot submit a <button> or <input type="su
 <form>');let v=n.getAttribute("formaction")||x.getAttribute("action");if(r=v?Na(v,i):null,o=n.getAtt
 ribute("formmethod")||x.getAttribute("method")||Zc,u=Uo(n.getAttribute("formenctype"))||Uo(x.getAttr
 ibute("enctype"))||Kc,d=new FormData(x,n),!yy()){let{name:m,type:b,value:S}=n;if(b==="image"){let
-C=m?`${m}.`:"";d.append(`${C}x`,"0"),d.append(`${C}y`,`
+C=m?`${m}.`:"";d.append(`${C}x`,"0"),d.append(`${C}y`
