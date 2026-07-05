@@ -1,9 +1,9 @@
 # OSINT Intelligence Workstation - V19 Merged
 
 > **Latest build with all fixes + V18 features merged**
-> 
+>
 > Download: [OSINT_Workstation_V19.zip](https://litter.catbox.moe/5xdaga.zip) (valid 72h)
-> 
+>
 > Live preview: https://acuashoz7zieq.kimi.page
 
 ---
@@ -71,10 +71,20 @@ Then open http://localhost:3000
 
 | File | Description |
 |------|-------------|
-| `index.html` | Entry point (loads CSS + JS) |
+| `index.html` | Entry point (loads CSS + JS loader) |
 | `assets/index-BuLf2qKw.css` | Styles (81KB) |
-| `assets/js_part1.js` - `js_part4.js` | JS bundle split into 4 parts |
+| `assets/js_loader_v19.js` | JS loader - loads all parts sequentially |
+| `assets/js_v19_final_p1.js` | JS bundle part 1/8 (68KB) |
+| `assets/js_v19_final_p2.js` | JS bundle part 2/8 (20KB) |
+| `assets/js_v19_final_p3.js` | JS bundle part 3/8 (71KB) |
+| `assets/js_v19_final_p4.js` | JS bundle part 4/8 (18KB) |
+| `assets/js_v19_final_p5.js` | JS bundle part 5/8 (70KB) |
+| `assets/js_v19_final_p6.js` | JS bundle part 6/8 (23KB) |
+| `assets/js_v19_final_p7.js` | JS bundle part 7/8 (66KB) |
+| `assets/js_v19_final_p8.js` | JS bundle part 8/8 (19KB) |
 | `Kimi_Agent_מערכת OSINT V18.zip` | Previous V18 build |
+
+**Total JS: ~355KB** (split into 8 parts for reliable GitHub hosting)
 
 ---
 
